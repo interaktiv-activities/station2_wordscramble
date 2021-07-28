@@ -1,0 +1,47 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>STATION 2 - Word Scramble</title>
+        <link href="styles.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="favicon.png">
+        <script defer src="script.js"></script>
+    </head>
+
+    <body>
+        <div class="container" id="container">
+            <input type="image" src="ASSETS/start-msg.png" class="start-msg msg" id="start-msg">
+            <button class="start-btn btn" id="start-btn" onclick="startGame()">START</button>
+            <input type="image" src="ASSETS/pass-msg.png" class="pass-msg msg hide" id="pass-msg">
+            <input type="image" src="ASSETS/fail-msg.png" class="fail-msg msg hide" id="fail-msg">
+            <button class="menu-btn btn hide" id="menu-btn">BACK TO MENU</button>
+
+            <div class="header">
+                <img src="ASSETS/title-img.png" id="title-img" class="title-img hide">
+                <div id="level-text" class="level-text hide"> LEVEL 1 </div>
+                <div id="timer" class="timer hide"> TIMER: <span id="time-remaining">60</span></div>
+            </div>
+    
+
+            <img src="ASSETS/LETTERS/letters-img1.png" id="letters-img1" class="letters-img hide">
+            <img src="ASSETS/LETTERS/letters-img2.png" id="letters-img2" class="letters-img hide">
+            <img src="ASSETS/LETTERS/letters-img3.png" id="letters-img3" class="letters-img hide">
+            <img src="ASSETS/LETTERS/letters-img4.png" id="letters-img4" class="letters-img hide">
+            <img src="ASSETS/LETTERS/letters-img5.png" id="letters-img5" class="letters-img hide">
+            <img src="ASSETS/LETTERS/letters-img6.png" id="letters-img6" class="letters-img hide">
+            <img src="ASSETS/LETTERS/letters-img7.png" id="letters-img7" class="letters-img hide">
+            <img src="ASSETS/LETTERS/letters-img8.png" id="letters-img8" class="letters-img hide">
+            <img src="ASSETS/LETTERS/letters-img9.png" id="letters-img9" class="letters-img hide">
+            <img src="ASSETS/LETTERS/letters-img10.png" id="letters-img10" class="letters-img hide">
+        
+            <div class="footer">
+                <div id="question-text" class="question-text  hide"> Question </div>
+                <input type="text" class="answer-box hide" id="answer-box" placeholder="ENTER YOUR ANSWER HERE" onkeyup="this.value = this.value.toUpperCase()" onfocus="this.value=''"> <br>
+                <button class="submit-btn btn hide" id="submit-btn" onclick="submitAnswer()">SUBMIT</button>
+            </div>
+        </div>
+
+        
+    </body>
+</html>
