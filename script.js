@@ -1,6 +1,6 @@
 //START MESSAGE ELEMENT
-const startMessage = document.getElementById("start-msg")
-const startButton = document.getElementById("start-btn")
+const countdown = document.getElementById("countdown")
+const countdownText = document.getElementById("countdown-text")
 
 //QUIZ ELEMENTS
 const titleImage = document.getElementById("title-img")
@@ -30,15 +30,25 @@ const menuButton = document.getElementById("menu-btn")
 //QUESTION COUNTER
 let questionIndex = 0
 
+//COUNTDOWN
+let countdownTime = 5
+var countdownInterval = setInterval(function(){
+    countdownTime--
+    countdownText.innerHTML = countdownTime
+
+    if (countdownTime == 0){
+        startGame()
+        clearInterval(countdownInterval)
+    }
+}, 1000)
+
 //TIMER
-let currentTime = 60
+let currentTime = 65
 const timeRemaining = document.getElementById("time-remaining")
-function startCountDown() {
-    setInterval(function(){ 
-        currentTime--
-        timeRemaining.innerHTML = currentTime
-    }, 1000);
-}
+setInterval(function(){ 
+    currentTime--
+    timeRemaining.innerHTML = currentTime
+}, 1000);
 
 var failCounter = setInterval(function(){ 
     lettersImage1.classList.add('hide')
@@ -64,8 +74,8 @@ var failCounter = setInterval(function(){
 //GAME FUNCTIONS
 
 function startGame(){
-    startButton.classList.add("hide")
-    startMessage.classList.add("hide")
+    countdown.classList.add("hide")
+    countdownText.classList.add("hide")
     titleImage.classList.remove('hide')
     levelText.classList.remove('hide')
     timerText.classList.remove('hide')

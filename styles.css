@@ -8,6 +8,11 @@
     src: url(FONTS/Sofia/Sofia\ Pro\ Regular\ Az.otf)
 }
 
+@font-face{
+    font-family: CandyBeans;
+    src: url(FONTS/Candy\ Beans.otf)
+}
+
 ::placeholder{
     color: #FFFFFF;
 }
@@ -27,8 +32,19 @@ body{
     color: #FFFFFF;
 }
 
+.countdown-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #00BCBB;
+    font-family: CandyBeans;
+    font-size: 150px;
+    margin-left: 10px;;
+}
+
 .msg{
-    width: 60%;
+    width: 700px;
     position: relative;
     display: block;
     margin: auto;
