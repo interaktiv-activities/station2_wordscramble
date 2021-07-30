@@ -43,7 +43,7 @@ var countdownInterval = setInterval(function(){
 }, 1000)
 
 //TIMER
-let currentTime = 65
+let currentTime = 95
 const timeRemaining = document.getElementById("time-remaining")
 setInterval(function(){ 
     currentTime--
@@ -85,7 +85,7 @@ function startGame(){
     submitButton.classList.remove('hide')
     questionText.innerHTML = questionBank[0]
     questionIndex = 1
-    currentTime = 60
+    currentTime = 90
     startCountDown()
 }
 
