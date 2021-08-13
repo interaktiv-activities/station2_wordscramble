@@ -1,3 +1,28 @@
+//SOUNDS
+var correctSound = new Audio()
+correctSound.src = "SOUNDS/match.wav"
+
+var incorrectSound = new Audio()
+incorrectSound.src = "SOUNDS/gameover.wav"
+
+var winSound = new Audio()
+winSound.src = "SOUNDs/victory.wav"
+
+var backgroundMusic = new Audio();
+backgroundMusic.src = "SOUNDS/happy.mp3"
+
+window.addEventListener("click", () => {
+  if (questionIndex > 9){
+    backgroundMusic.pause()
+  } else if (currentTime == 0){
+    backgroundMusic.pause()
+  } else if (currentTime > 0){
+    backgroundMusic.play()
+    backgroundMusic.volume = 0.1
+    backgroundMusic.loop = true
+  }
+})
+
 //START MESSAGE ELEMENT
 const countdown = document.getElementById("countdown")
 const countdownText = document.getElementById("countdown-text")
@@ -39,6 +64,8 @@ var countdownInterval = setInterval(function(){
     if (countdownTime == 0){
         startGame()
         clearInterval(countdownInterval)
+
+        window.removeEventListener("click", backgroundMusic.play)
     }
 }, 1000)
 
@@ -69,9 +96,16 @@ var failCounter = setInterval(function(){
     answerBox.classList.add('hide')
     submitButton.classList.add('hide')
     failMessage.classList.remove('hide')
+    backgroundMusic.pause()
+    incorrectSound.play()
 }, currentTime*1000);
 
 //GAME FUNCTIONS
+addEventListener('keypress', function (e){
+    if (e.key === 'Enter') {
+        submitAnswer()
+    }
+})
 
 function startGame(){
     countdown.classList.add("hide")
@@ -99,6 +133,8 @@ function submitAnswer(){
                 lettersImage2.classList.remove('hide')
                 levelText.innerHTML = "LEVEL " + questionIndex
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
+                answerBox.value = ""
+                correctSound.play()
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -110,6 +146,8 @@ function submitAnswer(){
                 lettersImage3.classList.remove('hide')
                 levelText.innerHTML = "LEVEL " + questionIndex
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
+                answerBox.value = ""
+                correctSound.play()
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -121,6 +159,8 @@ function submitAnswer(){
                 lettersImage4.classList.remove('hide')
                 levelText.innerHTML = "LEVEL " + questionIndex
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
+                answerBox.value = ""
+                correctSound.play()
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -132,6 +172,8 @@ function submitAnswer(){
                 lettersImage5.classList.remove('hide')
                 levelText.innerHTML = "LEVEL " + questionIndex
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
+                answerBox.value = ""
+                correctSound.play()
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -143,6 +185,8 @@ function submitAnswer(){
                 lettersImage6.classList.remove('hide')
                 levelText.innerHTML = "LEVEL " + questionIndex
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
+                answerBox.value = ""
+                correctSound.play()
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -154,6 +198,8 @@ function submitAnswer(){
                 lettersImage7.classList.remove('hide')
                 levelText.innerHTML = "LEVEL " + questionIndex
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
+                answerBox.value = ""
+                correctSound.play()
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -165,6 +211,8 @@ function submitAnswer(){
                 lettersImage8.classList.remove('hide')
                 levelText.innerHTML = "LEVEL " + questionIndex
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
+                answerBox.value = ""
+                correctSound.play()
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -176,6 +224,8 @@ function submitAnswer(){
                 lettersImage9.classList.remove('hide')
                 levelText.innerHTML = "LEVEL " + questionIndex
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
+                answerBox.value = ""
+                correctSound.play()
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -187,6 +237,8 @@ function submitAnswer(){
                 lettersImage10.classList.remove('hide')
                 levelText.innerHTML = "LEVEL " + questionIndex
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
+                answerBox.value = ""
+                correctSound.play()
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -205,6 +257,9 @@ function submitAnswer(){
                 passMessage.classList.remove('hide')
                 menuButton.classList.remove('hide')
                 clearInterval(failCounter)
+                answerBox.value = ""
+                winSound.play()
+                backgroundMusic.pause()
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
