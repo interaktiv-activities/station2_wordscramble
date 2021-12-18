@@ -18,7 +18,7 @@ window.addEventListener("click", () => {
     backgroundMusic.pause()
   } else if (currentTime > 0){
     backgroundMusic.play()
-    backgroundMusic.volume = 0.1
+    backgroundMusic.volume = 0.05
     backgroundMusic.loop = true
   }
 })
@@ -97,6 +97,7 @@ var failCounter = setInterval(function(){
     submitButton.classList.add('hide')
     failMessage.classList.remove('hide')
     backgroundMusic.pause()
+    incorrectSound.volume = .5
     incorrectSound.play()
 }, currentTime*1000);
 
@@ -135,6 +136,7 @@ function submitAnswer(){
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
                 answerBox.value = ""
                 correctSound.play()
+                correctSound.volume = 0.5
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -148,6 +150,7 @@ function submitAnswer(){
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
                 answerBox.value = ""
                 correctSound.play()
+                correctSound.volume = 0.5
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -161,6 +164,7 @@ function submitAnswer(){
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
                 answerBox.value = ""
                 correctSound.play()
+                correctSound.volume = 0.5
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -174,6 +178,7 @@ function submitAnswer(){
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
                 answerBox.value = ""
                 correctSound.play()
+                correctSound.volume = 0.5
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -187,6 +192,7 @@ function submitAnswer(){
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
                 answerBox.value = ""
                 correctSound.play()
+                correctSound.volume = 0.5
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -200,6 +206,7 @@ function submitAnswer(){
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
                 answerBox.value = ""
                 correctSound.play()
+                correctSound.volume = 0.5
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -213,6 +220,7 @@ function submitAnswer(){
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
                 answerBox.value = ""
                 correctSound.play()
+                correctSound.volume = 0.5
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -226,6 +234,7 @@ function submitAnswer(){
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
                 answerBox.value = ""
                 correctSound.play()
+                correctSound.volume = 0.5
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -239,6 +248,7 @@ function submitAnswer(){
                 questionText.innerHTML = questionBank[(questionIndex - 1)]
                 answerBox.value = ""
                 correctSound.play()
+                correctSound.volume = 0.5
             } else {
                 alert("INCORRECT! Please Try Again!")
             }
@@ -259,6 +269,7 @@ function submitAnswer(){
                 clearInterval(failCounter)
                 answerBox.value = ""
                 winSound.play()
+                winSound.volume = 0.5
                 backgroundMusic.pause()
             } else {
                 alert("INCORRECT! Please Try Again!")
